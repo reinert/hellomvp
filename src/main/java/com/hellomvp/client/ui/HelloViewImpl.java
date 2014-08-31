@@ -10,6 +10,7 @@ import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import com.hellomvp.client.place.GoodbyePlace;
+import com.hellomvp.client.place.UsersPlace;
 
 public class HelloViewImpl extends Composite implements HelloView
 {
@@ -41,6 +42,12 @@ public class HelloViewImpl extends Composite implements HelloView
 	{
 		listener.goTo(new GoodbyePlace(name));
 	}
+
+    @UiHandler("userLink")
+    void onUserClick(ClickEvent e)
+    {
+        listener.goTo(new UsersPlace());
+    }
 
 	@Override
 	public void setPresenter(Presenter listener)

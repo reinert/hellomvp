@@ -2,6 +2,7 @@ package com.hellomvp.client;
 
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.place.shared.PlaceController;
+import com.hellomvp.client.app.users.UsersView;
 import com.hellomvp.client.ui.GoodbyeView;
 import com.hellomvp.client.ui.HelloView;
 
@@ -11,4 +12,5 @@ public interface ClientFactory
 	PlaceController getPlaceController();
 	HelloView getHelloView();
 	GoodbyeView getGoodbyeView();
+    UsersView getUsersView();
 }

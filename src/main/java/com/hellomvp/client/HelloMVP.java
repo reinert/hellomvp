@@ -39,7 +39,7 @@ public class HelloMVP implements EntryPoint
 		activityManager.setDisplay(appWidget);
 
 		// Start PlaceHistoryHandler with our PlaceHistoryMapper
-		AppPlaceHistoryMapper historyMapper= GWT.create(AppPlaceHistoryMapper.class);
+		AppPlaceHistoryMapper historyMapper = GWT.create(AppPlaceHistoryMapper.class);
 		PlaceHistoryHandler historyHandler = new PlaceHistoryHandler(historyMapper);
 		historyHandler.register(placeController, eventBus, defaultPlace);
 

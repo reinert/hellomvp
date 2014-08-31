@@ -6,8 +6,10 @@ import com.google.gwt.place.shared.Place;
 import com.hellomvp.client.ClientFactory;
 import com.hellomvp.client.activity.GoodbyeActivity;
 import com.hellomvp.client.activity.HelloActivity;
+import com.hellomvp.client.activity.UsersActivity;
 import com.hellomvp.client.place.GoodbyePlace;
 import com.hellomvp.client.place.HelloPlace;
+import com.hellomvp.client.place.UsersPlace;
 
 public class AppActivityMapper implements ActivityMapper {
 
@@ -36,6 +38,8 @@ public class AppActivityMapper implements ActivityMapper {
 			return new HelloActivity((HelloPlace) place, clientFactory);
 		else if (place instanceof GoodbyePlace)
 			return new GoodbyeActivity((GoodbyePlace) place, clientFactory);
+        else if (place instanceof UsersPlace)
+            return new UsersActivity((UsersPlace) place, clientFactory);
 
 		return null;
 	}
