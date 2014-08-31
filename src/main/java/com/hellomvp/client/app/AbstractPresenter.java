@@ -1,12 +1,36 @@
 package com.hellomvp.client.app;
 
-public abstract class AbstractPresenter implements Presenter {
+import com.google.gwt.user.client.ui.Widget;
+
+public abstract class AbstractPresenter<V extends View<?>> implements Presenter {
+
+    final V view;
+
+    protected AbstractPresenter(V view) {
+        this.view = view;
+    }
 
     @Override
-    public void onStart() {}
+    public void unbind() {
+        view.setHandler(null);
+    }
+
     @Override
-    public String mayStop() {return null;}
+    public Widget asWidget() {
+        return view.asWidget();
+    }
+
     @Override
-    public void onStop() {}
+    public void onStart() {
+    }
+
+    @Override
+    public String mayStop() {
+        return null;
+    }
+
+    @Override
+    public void onStop() {
+    }
 
 }
